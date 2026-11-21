@@ -128,7 +128,10 @@ builder. They need only the root environment (no mace/torch).
 * **No finite-size / charge corrections** are applied to the DFT energies (only
   distortions *within* one charge state are compared here, where they cancel).
 * **Target system**: data are Sb2Se3 (V_Sb1, V_Se1), the project target is Sb2Te3.
-* **Dataset citation / license** of the public Sb2Se3 data is missing — add DOI and license.
+* **Dataset source (verified 2026-11-20):** every file under `data/` (379 files) is byte-identical to the Walsh group's Zenodo release.
+  - Dataset: Wang, Mosquera-Lois & Walsh, *Supporting data for "Multi-fidelity Machine Learning Interatomic Potentials for Charged Point Defects"*, Zenodo, doi:10.5281/zenodo.22756145, CC-BY-4.0.
+  - Paper: arXiv:2603.05238. Cite both in any output.
+  - The trained models in `data/2_*` and `data/3_*` are the authors' baselines, not fine-tuning done here. Yile's own MACE-Polar fine-tuning runs still need to be committed.
 * **MACE-Polar results and the five fine-tuning runs** (configs, logs, seeds) are not
   in the repository yet.
 * **E0 mismatch**: `Charge_embedded_MACE/run.sh` uses E0(Se) = −2.05295446 eV, while
